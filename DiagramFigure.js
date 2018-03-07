@@ -1,3 +1,4 @@
+
 Figure.prototype.toggleBackground=function()
 {
   if(this.highlight) {
@@ -145,6 +146,12 @@ Node.prototype.addAnnotation = function(aForWhat, aText, aAnnX, aAnnY) {
 DiagramFigure=function(){
   this.type = "DiagramFigure";
   ImageFigure.call(this);
+  this.inputPort=null;
+};
+
+DiagramFigure=function(w, h){
+  this.type = "DiagramFigure";
+  ImageFigure.call(this, null, w, h);
   this.inputPort=null;
 };
 

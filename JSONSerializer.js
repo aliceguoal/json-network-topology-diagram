@@ -51,9 +51,9 @@ JSONSerializer.prototype.xml2DOM = function(text) {
 };
 
 
-JSONSerializer.prototype.makeObject=function(/*:Document*/ objType, x, y)
+JSONSerializer.prototype.makeObject=function(/*:Document*/ objType, w,h, x, y)
 {
-  var obj = eval("new " + objType + "();");
+  var obj = eval("new " + objType + "("+ w + "," + h + ");");
   workflow.addFigure(obj, x, y);
   return obj;
 }
@@ -144,7 +144,7 @@ JSONSerializer.prototype.fromJSON=function(js)
   for (var i=0; i<figures.length; i++) {
     var fig = figures[i];
     addDragIconPic(fig['subtype'], "icons_div", fig['pic']);
-    var obj = this.makeObject(fig['type'], fig['x'], fig['y']);
+    var obj = this.makeObject(fig['type'],fig['width'], fig['height'], fig['x'], fig['y']);
     obj.id = fig['id'];
     obj.setPic(fig['pic']);
     obj.subtype = fig['subtype'];

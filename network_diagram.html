@@ -206,7 +206,7 @@ function doSaveJSON()
 {
   var txt = Ext.util.JSON.encode(new JSONSerializer().toJSON(workflow.getDocument()));
   txt = txt.replace(/,"/g, ', "');
-  document.getElementById('json_text').value = "json_diagram = " + txt + "\n\n\n\n";
+  document.getElementById('json_text').value = txt + "\n\n\n\n";
   //document.getElementById('json_text').innerHTML = "json_diagram = " + txt + ";\n\n\n\n";
 }
 
